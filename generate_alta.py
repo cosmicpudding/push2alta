@@ -35,8 +35,6 @@ for ds in datasets:
 		os.system('mkdir ../transfer/WSRTA%s' % tid)
 		os.chdir('../transfer/WSRTA%s' % tid)
 		os.system("../../prepare_transfer_alta.sh -s %s -f '.*%s.*' -i 'icat,res1' -1" % (ds,tid))
-
-		sys.exit()
 	
 
 
