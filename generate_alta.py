@@ -34,8 +34,14 @@ for ds in datasets:
 		# Check if it already exists on ALTA
 		cmd = os.popen('ils -l /altaZone/home/apertif_main/wcudata/WSRTA%s' % tid)
 		for x in cmd:
-			print x
-		sys.exit()		
+
+			# Continue only if not in ALTA
+			if 'does not exist or user lacks access permission' in x:
+				os.system('mkdir ../transfer/WSRTA%s' % tid)
+				os.chdir('../transfer/WSRTA%s' % tid)
+				os.system("../prepare_transfer_alta.sh -s /data/apertif/%s -f '.*%s.*' -i 'icat,res1' -1" % (ds,tid))
+
+				sys.exit()
 	
 
 
