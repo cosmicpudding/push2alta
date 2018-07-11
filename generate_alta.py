@@ -11,6 +11,7 @@ import os
 import sys
 
 path = '/data/apertif'
+maxdate = 180126
 
 # Get list of possible datasets
 datasets = []
@@ -20,5 +21,13 @@ for x in cmd:
 	size = col[0]
 	folder = col[1]
 	if size != '0':
-		print size,folder
+		datasets.append(folder)
+
+for ds in datasets:
+
+	tid = float(ds.split('/')[-1].split('_')[0])
+	if tid <= maxdate:
+		print ds
+	
+
 
