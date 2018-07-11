@@ -13,7 +13,7 @@ path = '../transfer/'
 
 # Get list of possible datasets
 datasets = []
-cmd = os.popen('ls %s/*' % path)
+cmd = os.popen('ls -d %s/*' % path)
 for x in cmd:
 	folder = x.strip()
 	datasets.append(folder)
