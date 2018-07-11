@@ -24,6 +24,7 @@ for ds in datasets:
 	os.chdir('%s' % ds)
 
 	# Run the transfer script
+	print 'Running script for %s...' % ds
 	os.system('./transfer_all.sh')
 
 	# Change back to code directory
@@ -31,5 +32,3 @@ for ds in datasets:
 
 	# Move the folder to "done"
 	os.system('mv %s ../done/' % ds)
-
-	sys.exit()
