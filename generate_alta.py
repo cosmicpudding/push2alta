@@ -14,6 +14,7 @@ path = '/data/apertif'
 maxdate = 180126
 
 # Get list of possible datasets
+print 'Getting list of datasets...'
 datasets = []
 cmd = os.popen('du -sh %s/1*' % path)
 for x in cmd:
@@ -23,6 +24,7 @@ for x in cmd:
 	if size != '0':
 		datasets.append(folder)
 
+print 'Looping through datasets to create scripts...'
 for ds in datasets:
 
 	print ds
