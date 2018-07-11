@@ -25,10 +25,17 @@ for x in cmd:
 
 for ds in datasets:
 
-	tid = float(ds.split('/')[-1].split('_')[0])
-	date = float(ds.split('/')[-1].split('_')[0][0:6])
+	tid = ds.split('/')[-1].split('_')[0]
+	date = float(tid[0:6])
+	
+	# Consider only the dataset before a certain date
 	if date <= maxdate:
-		print ds
+
+		# Check if it already exists on ALTA
+		cmd = os.popen('ils -l /altaZone/home/apertif_main/wcudata/WSRTA%s' % tid)
+		for x in cmd:
+			print x
+		sys.exit()		
 	
 
 
