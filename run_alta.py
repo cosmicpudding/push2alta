@@ -24,7 +24,7 @@ for ds in datasets:
 	os.chdir('%s' % ds)
 
 	# Run the transfer script
-	print 'Running script for %s...' % ds
+	print '\n\nRunning script for %s...\n' % ds
 	os.system('./transfer_all.sh')
 
 	# Change back to code directory
