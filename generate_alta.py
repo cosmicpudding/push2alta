@@ -38,7 +38,7 @@ for ds in datasets:
 		# Assume it is not in ALTA or will be dealt with at a later stage...
 		os.system('mkdir ../transfer/WSRTA%s' % tid)
 		os.chdir('../transfer/WSRTA%s' % tid)
-		os.system("../../prepare_transfer_alta.sh -s %s -f '.*%s.*' -i 'icat,res1,res2,res3' -1" % (ds,tid))
+		os.system("../../prepare_transfer_alta.sh -s %s -f '.*%s.*' -i 'icat,res1,res3' -1" % (ds,tid))
 		
 		# Change back to original directory
 		os.chdir('../../push2alta/')
