@@ -4,7 +4,7 @@
 # Input: path, maximum date to consider
 # V.A. Moss 11/07/2018 (vmoss.astro@gmail.com)
 __author__ = "V.A. Moss"
-__date__ = "$05-apr-2018 16:00:00$"
+__date__ = "$11-jul-2018 12:00:00$"
 __version__ = "1.0"
 
 import os
