@@ -23,12 +23,11 @@ for x in cmd:
 	if size != '0':
 		datasets.append(folder)
 
-print datasets
-
 for ds in datasets:
 
 	tid = float(ds.split('/')[-1].split('_')[0])
-	if tid <= maxdate:
+	date = float(ds.split('/')[-1].split('_')[0][0:6])
+	if date <= maxdate:
 		print ds
 	
 
