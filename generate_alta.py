@@ -23,6 +23,8 @@ for x in cmd:
 	if size != '0':
 		datasets.append(folder)
 
+print datasets
+
 for ds in datasets:
 
 	tid = float(ds.split('/')[-1].split('_')[0])
