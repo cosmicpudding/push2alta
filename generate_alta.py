@@ -1,8 +1,8 @@
 #!/usr/bin/env python2.7
 
-# APERTIF PARSET GENERATOR (apgen.py)
-# Input: source text file
-# V.A. Moss 05/04/2018 (vmoss.astro@gmail.com)
+# APERTIF HAPPILI > ALTA SCRIPT GENERATOR (generate_alta.py)
+# Input: path, maximum date to consider
+# V.A. Moss 11/07/2018 (vmoss.astro@gmail.com)
 __author__ = "V.A. Moss"
 __date__ = "$05-apr-2018 16:00:00$"
 __version__ = "1.0"
