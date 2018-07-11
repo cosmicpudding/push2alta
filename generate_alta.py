@@ -25,6 +25,8 @@ for x in cmd:
 
 for ds in datasets:
 
+	print ds
+
 	tid = ds.split('/')[-1].split('_')[0]
 	date = float(tid[0:6])
 	
@@ -35,6 +37,8 @@ for ds in datasets:
 		os.system('mkdir ../transfer/WSRTA%s' % tid)
 		os.chdir('../transfer/WSRTA%s' % tid)
 		os.system("../../prepare_transfer_alta.sh -s %s -f '.*%s.*' -i 'icat,res1' -1" % (ds,tid))
-	
+		
+		# Change back to original directory
+		os.chdir('../../push2alta/')
 
 
