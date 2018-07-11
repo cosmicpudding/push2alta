@@ -9,7 +9,7 @@ __version__ = "1.0"
 import os
 import sys
 
-path = '../transfer/'
+path = '../transfer'
 
 # Get list of possible datasets
 datasets = []
@@ -18,6 +18,18 @@ for x in cmd:
 	folder = x.strip()
 	datasets.append(folder)
 
-print datasets
+for ds in datasets:
 
-sys.exit()
+	# run from within the folder
+	os.chdir('%s' % ds)
+
+	# Run the transfer script
+	os.system('./transfer_all.sh')
+
+	# Change back to code directory
+	os.chdir('../../push2alta/')
+
+	# Move the folder to "done"
+	os.system('mv %s ../done/' % ds)
+
+	sys.exit()
