@@ -31,20 +31,12 @@ for ds in datasets:
 	# Consider only the dataset before a certain date
 	if date <= maxdate:
 
-		# Check if it already exists on ALTA
-		cmd = os.popen('ils -l /altaZone/home/apertif_main/wcudata/WSRTA%s' % tid)
-		for x in cmd:
+		# Assume it is not in ALTA or will be dealt with at a later stage...
+		os.system('mkdir ../transfer/WSRTA%s' % tid)
+		os.chdir('../transfer/WSRTA%s' % tid)
+		os.system("../prepare_transfer_alta.sh -s /data/apertif/%s -f '.*%s.*' -i 'icat,res1' -1" % (ds,tid))
 
-			print x
-			sys.exit()
-
-			# Continue only if not in ALTA
-			if 'does not exist or user lacks access permission' in x:
-				os.system('mkdir ../transfer/WSRTA%s' % tid)
-				os.chdir('../transfer/WSRTA%s' % tid)
-				os.system("../prepare_transfer_alta.sh -s /data/apertif/%s -f '.*%s.*' -i 'icat,res1' -1" % (ds,tid))
-
-				sys.exit()
+		sys.exit()
 	
 
 
