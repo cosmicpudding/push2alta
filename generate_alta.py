@@ -35,6 +35,9 @@ for ds in datasets:
 		cmd = os.popen('ils -l /altaZone/home/apertif_main/wcudata/WSRTA%s' % tid)
 		for x in cmd:
 
+			print x
+			sys.exit()
+
 			# Continue only if not in ALTA
 			if 'does not exist or user lacks access permission' in x:
 				os.system('mkdir ../transfer/WSRTA%s' % tid)
